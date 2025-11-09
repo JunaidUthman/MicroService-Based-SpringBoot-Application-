@@ -1,5 +1,5 @@
 services:
-  postgres:
+  postgres: #in real microservices apps, we need to have a service for each microservice. bit in this app , were going to use just one service for all databases
     container_name: postgres
     image: postgres
     environment:

@@ -1,5 +1,18 @@
 package com.submodule.customer;
 
-public record CustomerRegistrationRequest(String firstname , String lastname , String email) {
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class CustomerRegistrationRequest{
+    String firstname;
+    String lastname;
+    String email;
 
 }
