@@ -15,3 +15,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+eureka: #by doing this (and @EnableEurekaClient in the application), we are registering into the eureka server
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka
+
+    fetch-registry: true
+    register-with-eureka: true

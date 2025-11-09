@@ -23,7 +23,13 @@ public class CustomerService{
 
 
         // see CostumerConfig to understand restTemplate
-        FraudResponse fraudResponse = restTemplate.getForObject("http://localhost:8081/api/v1/fraud/{customerId}",
+        // --------------------- WITHOUT EUREKA ---------------------------
+//        FraudResponse fraudResponse = restTemplate.getForObject("http://localhost:8081/api/v1/fraud/{customerId}",
+//                FraudResponse.class, customer.getId());
+
+        //--------------------- WITH EUREKA ---------------------------
+        // we need to replace the adress by the neame of the microservice and VOILA!!
+        FraudResponse fraudResponse = restTemplate.getForObject("http://FRAUD/api/v1/fraud/{customerId}",
                 FraudResponse.class, customer.getId());
 
         if(fraudResponse.isFraud()){
